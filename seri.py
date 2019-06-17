@@ -29,6 +29,6 @@ if secim==1: ## Here Cisco Config You Can Change Evrything
 	
 elif secim==2: ## Here Brocade Config
 	ser.write(str.encode("\n vlan 2 \n "))
-	print(" ")
+	print("Firat ")
 
 

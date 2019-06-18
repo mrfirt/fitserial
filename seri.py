@@ -33,7 +33,6 @@ if secim==1: ## Here Cisco Config
 	ser.write(str.encode("\n ip ssh version 2 "))
 	ser.write(str.encode("\n end \n write memory \n"))
 	print("Config Başarılı Şekilde Atıldı Lütfen Kontrol Ediniz")
-	
 elif secim==2: ## Here Brocade Config
 	ser.write(str.encode("\n vlan 3 \n "))## your managment vlan 
 	ser.write(str.encode("\n ip address {} {}  \n exit".format(vlan,subnet)))
@@ -47,8 +46,13 @@ elif secim==3 :## here alcatel config
 	ser.write(str.encode("\n ip static-route 0.0.0.0  mask 0.0.0.0 gateway {} ".format(gateway)))
 	ser.write(str.encode("\n ssh enable "))
 	ser.write(str.encode("\n copy certified working  \n write memory \n copy working certified"))
-elif secim==4:
-   print("Yapım Aşamasında")
-
-
+elif secim==4: ## here huawei config
+	ser.write(str.encode("\n sysname {} ".format(sysname)))
+	ser.write(str.encode("\n vlan 3 \n "))
+	ser.write(str.encode("\n interface vlanif 3 ip address {}  {} \n ".format(vlan,subnet)))
+	ser.write(str.encode("\n ip route-static 0.0.0.0 0.0.0.0 {} ".format(gateway)))
+	ser.write(str.encode("\n rsa local-key-pair create \n 1024"))
+	ser.write(str.encode("\n save \n y ")
+else : 
+print("Lütfen Bir Seçim Yapınız ")
 	

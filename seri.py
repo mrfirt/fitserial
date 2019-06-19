@@ -54,8 +54,8 @@ elif secim==4: ## here huawei config
 	ser.write(str.encode("\n interface vlanif 3 ip address {}  {} \n ".format(vlan,subnet)))
 	ser.write(str.encode("\n ip route-static 0.0.0.0 0.0.0.0 {} ".format(gateway)))
 	ser.write(str.encode("\n rsa local-key-pair create \n 1024"))
-	ser.write(str.encode("\n save \n y ")
+	ser.write(str.encode("\n save \n y "))
 	print("Config Başarılı Şekilde Atıldı Lütfen Kontrol Ediniz")
 else : 
-print("Lütfen Bir Seçim Yapınız ")
+	print("Lütfen Bir Seçim Yapınız ")
 	

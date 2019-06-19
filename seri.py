@@ -39,6 +39,7 @@ elif secim==2: ## Here Brocade Config
 	ser.write(str.encode("\n ip default-gateway {}".format(gateway)))
 	ser.write(str.encode("\n crypto key generate rsa modulus 1024")) ## Here key rsa if you want change
 	ser.write(str.encode("\n end \n write memory"))
+	print("Config Başarılı Şekilde Atıldı Lütfen Kontrol Ediniz")
 elif secim==3 :## here alcatel config 
 	ser.write(str.encode("\n system name  {}".format(sysname)))
 	ser.write(str.encode("\n vlan 3 enable "))## Your managment vlan 
@@ -46,6 +47,7 @@ elif secim==3 :## here alcatel config
 	ser.write(str.encode("\n ip static-route 0.0.0.0  mask 0.0.0.0 gateway {} ".format(gateway)))
 	ser.write(str.encode("\n ssh enable "))
 	ser.write(str.encode("\n copy certified working  \n write memory \n copy working certified"))
+	print("Config Başarılı Şekilde Atıldı Lütfen Kontrol Ediniz")
 elif secim==4: ## here huawei config
 	ser.write(str.encode("\n sysname {} ".format(sysname)))
 	ser.write(str.encode("\n vlan 3 \n "))
@@ -53,6 +55,7 @@ elif secim==4: ## here huawei config
 	ser.write(str.encode("\n ip route-static 0.0.0.0 0.0.0.0 {} ".format(gateway)))
 	ser.write(str.encode("\n rsa local-key-pair create \n 1024"))
 	ser.write(str.encode("\n save \n y ")
+	print("Config Başarılı Şekilde Atıldı Lütfen Kontrol Ediniz")
 else : 
 print("Lütfen Bir Seçim Yapınız ")
 	
